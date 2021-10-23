@@ -1,11 +1,14 @@
 import React from 'react';
 import { Footer } from "../components";
 import footerItems from "../fixtures/footer.json"
+import SubscribeContainer from "./subscribe";
+
 
 const FooterContainer = () => {
     return (
         <Footer>
             <Footer.Title>Questions? Contact us.</Footer.Title>
+            <SubscribeContainer/>
             <Footer.Menu>
                 {footerItems.map(item => (
                     <Footer.MenuItem key={item.id}>
