@@ -14,14 +14,14 @@
 
 // RSC
 import React from 'react';
-import "./App.css"
-
+import FeatureContainer from "./containers/feature";
 
 
 const App = () => {
     return (
         <div className="App">
             <h1>ABCDE</h1>
+            {/*<FeatureContainer/>*/}
         </div>
     );
 };
