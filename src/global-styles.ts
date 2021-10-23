@@ -9,4 +9,10 @@ html, body {
   background-color: black;
   color: #333;
 }
+h1 {
+  font-size: 3rem;
+  @media (max-width: 600px){
+    font-size: 2rem;
+  }
+}
 `;

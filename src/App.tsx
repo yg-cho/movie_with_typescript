@@ -15,13 +15,14 @@
 // RSC
 import React from 'react';
 import FeatureContainer from "./containers/feature";
-
-
+import FooterContainer from "./containers/footer";
+import FaqContainer from "./containers/faqs"
 const App = () => {
     return (
         <div className="App">
-            <h1>ABCDE</h1>
-            {/*<FeatureContainer/>*/}
+            <FeatureContainer/>
+            <FaqContainer/>
+            <FooterContainer/>
         </div>
     );
 };
