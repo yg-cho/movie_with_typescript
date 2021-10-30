@@ -1,8 +1,8 @@
-import { Home, Browse, Signup, Signin } from '../pages'
+import { Home, Signup, Signin, Browse } from '../pages'
 
-export const ROUTES = [
-    { path: '/', page: <Home /> },
-    { path: '/browse', page: <Browse /> },
-    { path: '/signup', page: <Signup /> },
-    { path: '/signin', page: <Signin /> },
-]
+export const ROUTES = {
+    HOME: { path: '/', page: <Home /> },
+    BROWSE: { path: '/browse', page: <Browse /> },
+    SIGNUP: { path: '/signup', page: <Signup /> },
+    SIGNIN: { path: '/signin', page: <Signin /> }
+};
