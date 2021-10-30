@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Inner, Title, Panel, Input, Button } from './styles/subscribe';
 
-function Subscribe({ children, ...restProps }) {
+const Subscribe = ({ children, ...restProps }) => {
     return (
         <Container {...restProps}>
             <Inner>{children}</Inner>

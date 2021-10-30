@@ -1,8 +1,12 @@
 import React from 'react';
 import { Container, Panel, Nav, NavLink, Logo, Avatar, Button } from './styles/header';
 
-function Header({ children, ...restProps }) {
-    return <Container {...restProps}>{children}</Container>;
+const Header = ({ children, ...restProps }) => {
+    return(
+        <Container {...restProps}>
+            {children}
+        </Container>
+    );
 }
 
 Header.Panel = function HeaderPanel({ children, ...restProps }) {

@@ -14,12 +14,7 @@
 
 // RSC
 import React from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom";
-import FeatureContainer from "./containers/feature";
-import FooterContainer from "./containers/footer";
-import FaqContainer from "./containers/faqs"
-import BannerContainer from "./containers/banner";
-import HeaderContainer from "./containers/header"
+import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
 import { ROUTES } from "./constants/routes";
 
 
@@ -31,7 +26,9 @@ const App = () => {
                 <Route exact path={routing.path} key={routing.path}>
                     {routing.page}
                 </Route>
+
             ))}
+            <Redirect from={"*"} to={"/"} />x
         </Router>
             {/*<HeaderContainer/>*/}
             {/*<BannerContainer/>*/}
