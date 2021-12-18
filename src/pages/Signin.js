@@ -2,6 +2,8 @@ import React, {useState, Fragment} from 'react';
 import {FooterContainer, HeaderContainer} from "../containers";
 import {debounce} from "@material-ui/core";
 import {Form} from "../components"
+import axios from "axios";
+
 const Signin = () => {
 
     const [email, setEmail] = useState('');
@@ -20,8 +22,19 @@ const Signin = () => {
     const emailInvalid = isTouched.email && email === '';
     const passwordInvalid = isTouched.password && (password.length < 4 || password.length > 40);
 
-    const handleSignin = (e) => {
+    const handleSignin = async (e) => {
         e.preventDefault();
+        const userInput = { email, password }
+        try
+        {
+            const {data} = await axios.post("/api/auth/login", userInput)
+            console.log(" data :::::",data);
+        }
+        catch(e){
+            console.log(e);
+        }
+
+
         console.log({
             email,
             password

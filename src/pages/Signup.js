@@ -3,6 +3,7 @@ import { debounce } from "@material-ui/core";
 import {ROUTES} from "../constants/routes";
 import {FooterContainer, HeaderContainer} from "../containers";
 import {Form} from "../components";
+import axios from 'axios'
 
 const Signup = () => {
     const [email, setEmail] = useState("");
@@ -28,14 +29,16 @@ const Signup = () => {
     const passwordInvalid = isTouched.password && (password.length < 4 || password.length > 40);
 
 
-    const handleSignup = (e) => {
+    const handleSignup = async (e) => {
         e.preventDefault();
-        console.log({
-            name,
-            email,
-            password,
-            phone
-        })
+        const userInput = {email, name, password, phone}
+        try {
+            //email chekck
+            const {data} = await axios.post("/api/auth/signup", userInput)
+            console.log(data);
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     const checkAvailability = async (value, type) => {};
